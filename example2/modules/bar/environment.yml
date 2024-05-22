@@ -1,0 +1,9 @@
+name: cowsay
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pip:
+      - cowsay
