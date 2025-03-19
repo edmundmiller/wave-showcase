@@ -1,0 +1,15 @@
+{
+  "name": "wave-showcase",
+  "version": "1.0.0",
+  "description": "Documentation showcasing Wave container provisioning examples",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.15.0",
+    "astro": "^4.4.0"
+  }
+} 
