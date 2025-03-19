@@ -1,15 +1,19 @@
 {
-  "name": "wave-showcase",
-  "version": "1.0.0",
-  "description": "Documentation showcasing Wave container provisioning examples",
+  "name": "docs",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.15.0",
-    "astro": "^4.4.0"
+    "@astrojs/markdoc": "^0.13.1",
+    "@astrojs/starlight": "^0.32.3",
+    "@astrojs/starlight-markdoc": "^0.3.0",
+    "astro": "^5.1.5",
+    "sharp": "^0.32.5"
   }
-} 
+}

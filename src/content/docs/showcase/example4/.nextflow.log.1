@@ -1,0 +1,145 @@
+Feb-21 11:51:46.228 [main] DEBUG nextflow.cli.Launcher - $> nextflow run rnaseq-nf -with-wave
+Feb-21 11:51:46.263 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.4
+Feb-21 11:51:46.278 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/edmundmiller/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+Feb-21 11:51:46.291 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-21 11:51:46.291 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-21 11:51:46.292 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Feb-21 11:51:46.298 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Feb-21 11:51:46.305 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/edmundmiller/.nextflow/scm
+Feb-21 11:51:46.308 [main] DEBUG nextflow.scm.AssetManager - Listing projects in folder: /Users/edmundmiller/.nextflow/assets
+Feb-21 11:51:46.322 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Feb-21 11:51:46.326 [main] INFO  nextflow.cli.CmdRun - Pulling nextflow-io/rnaseq-nf ...
+Feb-21 11:51:46.327 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/nextflow-io/rnaseq-nf/contents/nextflow.config
+Feb-21 11:51:46.911 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/nextflow-io/rnaseq-nf/contents/main.nf
+Feb-21 11:51:47.063 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/nextflow-io/rnaseq-nf
+Feb-21 11:51:47.194 [main] DEBUG nextflow.scm.AssetManager - Pulling nextflow-io/rnaseq-nf -- Using remote clone url: https://github.com/nextflow-io/rnaseq-nf.git
+Feb-21 11:51:48.129 [main] INFO  nextflow.cli.CmdRun -  downloaded from https://github.com/nextflow-io/rnaseq-nf.git
+Feb-21 11:51:48.135 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /Users/edmundmiller/.nextflow/config
+Feb-21 11:51:48.136 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/nextflow.config
+Feb-21 11:51:48.136 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/edmundmiller/src/seqera/wave-showcase/example4/nextflow.config
+Feb-21 11:51:48.137 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/edmundmiller/.nextflow/config
+Feb-21 11:51:48.137 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/nextflow.config
+Feb-21 11:51:48.137 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/edmundmiller/src/seqera/wave-showcase/example4/nextflow.config
+Feb-21 11:51:48.142 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/edmundmiller/.nextflow/secrets/store.json
+Feb-21 11:51:48.143 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@78c74647] - activable => nextflow.secret.LocalSecretsProvider@78c74647
+Feb-21 11:51:48.145 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Feb-21 11:51:48.166 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Feb-21 11:51:48.204 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Feb-21 11:51:48.221 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Feb-21 11:51:48.222 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/nextflow-io/rnaseq-nf` [jovial_kare] DSL2 - revision: 1815dc2a18 [master]
+Feb-21 11:51:48.222 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-notify@0.1.0]
+Feb-21 11:51:48.223 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Feb-21 11:51:48.223 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-notify@0.1.0, nf-tower@1.9.3, nf-wave@1.7.4]
+Feb-21 11:51:48.223 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-notify version: 0.1.0
+Feb-21 11:51:48.227 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-notify@0.1.0' resolved
+Feb-21 11:51:48.227 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-notify@0.1.0'
+Feb-21 11:51:48.229 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-notify@0.1.0
+Feb-21 11:51:48.229 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-tower version: 1.9.3
+Feb-21 11:51:48.232 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-tower@1.9.3' resolved
+Feb-21 11:51:48.232 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-tower@1.9.3'
+Feb-21 11:51:48.238 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-tower@1.9.3
+Feb-21 11:51:48.239 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-wave version: 1.7.4
+Feb-21 11:51:48.243 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-wave@1.7.4' resolved
+Feb-21 11:51:48.243 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-wave@1.7.4'
+Feb-21 11:51:48.254 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-wave@1.7.4
+Feb-21 11:51:48.280 [main] DEBUG nextflow.Session - Session UUID: 4cd86139-b719-4928-bda6-80e8d06c2b4e
+Feb-21 11:51:48.280 [main] DEBUG nextflow.Session - Run name: jovial_kare
+Feb-21 11:51:48.280 [main] DEBUG nextflow.Session - Executor pool size: 11
+Feb-21 11:51:48.285 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Feb-21 11:51:48.288 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=33; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-21 11:51:48.306 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.4 build 5934
+  Created: 20-01-2025 16:47 UTC (10:47 CDT)
+  System: Mac OS X 15.3.1
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 17.0.10+7
+  Encoding: UTF-8 (UTF-8)
+  Process: 29477@Mac.attlocal.net [192.168.1.202]
+  CPUs: 11 - Mem: 36 GB (76.8 MB) - Swap: 10 GB (640.5 MB)
+Feb-21 11:51:48.315 [main] DEBUG nextflow.Session - Work-dir: /Users/edmundmiller/src/seqera/wave-showcase/example4/work [Mac OS X]
+Feb-21 11:51:48.331 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Feb-21 11:51:48.337 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Feb-21 11:51:48.339 [main] DEBUG nextflow.Session - Observer factory: WaveFactory
+Feb-21 11:51:48.339 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Feb-21 11:51:48.352 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Feb-21 11:51:48.357 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 12; maxThreads: 1000
+Feb-21 11:51:48.382 [main] DEBUG nextflow.Session - Session start
+Feb-21 11:51:48.454 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Feb-21 11:51:48.604 [main] INFO  nextflow.Nextflow -   R N A S E Q - N F   P I P E L I N E
+  ===================================
+  transcriptome: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa
+  reads        : /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/ggal_gut_{1,2}.fq
+  outdir       : results
+  
+Feb-21 11:51:48.648 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-21 11:51:48.648 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-21 11:51:48.650 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Feb-21 11:51:48.653 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=11; memory=36 GB; capacity=11; pollInterval=100ms; dumpInterval=5m
+Feb-21 11:51:48.654 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Feb-21 11:51:48.687 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-21 11:51:48.687 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-21 11:51:48.690 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-21 11:51:48.690 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-21 11:51:48.699 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-21 11:51:48.700 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-21 11:51:48.702 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, RNASEQ:INDEX, RNASEQ:QUANT, MULTIQC, INDEX, RNASEQ:FASTQC, QUANT
+Feb-21 11:51:48.702 [main] DEBUG nextflow.Session - Igniting dataflow network (5)
+Feb-21 11:51:48.713 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/; pattern: ggal_gut_{1,2}.fq; options: [checkIfExists:true]
+Feb-21 11:51:48.713 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RNASEQ:INDEX
+Feb-21 11:51:48.713 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RNASEQ:FASTQC
+Feb-21 11:51:48.713 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RNASEQ:QUANT
+Feb-21 11:51:48.713 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Feb-21 11:51:48.714 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_84e0c0846989c3f9: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/./modules/./fastqc/main.nf
+  Script_ddb63d1e49bbbd23: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/./modules/./index/main.nf
+  Script_93ab1d6aaf1fee24: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/./modules/./quant/main.nf
+  Script_ff16f4ec3543575c: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/./modules/rnaseq.nf
+  Script_802cb7373e975c93: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/main.nf
+  Script_9098cb003c627ceb: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/./modules/multiqc/main.nf
+Feb-21 11:51:48.714 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Feb-21 11:51:48.714 [main] DEBUG nextflow.Session - Session await
+Feb-21 11:51:48.752 [Actor Thread 11] DEBUG io.seqera.wave.plugin.WaveClient - Wave config: WaveConfig(enabled:true, endpoint:https://wave.seqera.io, containerConfigUrl:[], tokensCacheMaxDuration:30m, condaOpts:CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), spackOpts:SpackOpts(basePackages=null, commands=null), strategy:[conda], bundleProjectResources:null, buildRepository:null, cacheRepository:null, retryOpts:RetryOpts(delay:450ms, maxDelay:1m 30s, maxAttempts:10, jitter:0.25), httpClientOpts:HttpOpts(), freezeMode:null, preserveFileTimestamp:null, buildMaxDuration:40m, mirrorMode:null, scanMode:null, scanAllowedLevels:null)
+Feb-21 11:51:48.780 [Actor Thread 10] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:eyJ0aWQiOiAxMDY3MH0uOGE0MDAwMDc1ZjdiNGE1MzlkMmRjMWNkYWU5NjAwNmJlZWZkN2Y2Mw==, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, spackFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-02-21T11:51:48.777295-06:00, fingerprint:b7a93860a09a6c28bde7be3236925e96, freeze:false, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::fastqc=0.12.1], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), spackOpts=null, channels=conda-forge,bioconda}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Feb-21 11:51:48.780 [Actor Thread 11] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:eyJ0aWQiOiAxMDY3MH0uOGE0MDAwMDc1ZjdiNGE1MzlkMmRjMWNkYWU5NjAwNmJlZWZkN2Y2Mw==, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, spackFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-02-21T11:51:48.777295-06:00, fingerprint:647327b24207f4c8abcc88561872cd05, freeze:false, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::salmon=1.10.3], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), spackOpts=null, channels=conda-forge,bioconda}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Feb-21 11:51:50.151 [Actor Thread 10] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"0beef91f3ee4","containerToken":"0beef91f3ee4","targetImage":"wave.seqera.io/wt/0beef91f3ee4/wave/build:fastqc-0.12.1--662899d0b7bd9e15","expiration":"2025-02-23T05:51:50.105447172Z","containerImage":"195996028523.dkr.ecr.eu-west-1.amazonaws.com/wave/build:fastqc-0.12.1--662899d0b7bd9e15","buildId":"bd-662899d0b7bd9e15_9","cached":true,"freeze":false,"mirror":false,"scanId":"sc-d35efe5dd82943c2_16"}
+Feb-21 11:51:50.180 [Actor Thread 10] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/ggal_gut_1.fq
+Feb-21 11:51:50.185 [Actor Thread 10] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/ggal_gut_2.fq
+Feb-21 11:51:50.188 [Actor Thread 10] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/bin/fastqc.sh
+Feb-21 11:51:50.429 [Actor Thread 11] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"eb14c9316b3a","containerToken":"eb14c9316b3a","targetImage":"wave.seqera.io/wt/eb14c9316b3a/wave/build:salmon-1.10.3--1fc239026070d9d3","expiration":"2025-02-23T05:51:50.404942729Z","containerImage":"195996028523.dkr.ecr.eu-west-1.amazonaws.com/wave/build:salmon-1.10.3--1fc239026070d9d3","buildId":"bd-1fc239026070d9d3_5","cached":true,"freeze":false,"mirror":false,"scanId":"sc-417f3caba7a3f746_8"}
+Feb-21 11:51:50.431 [Actor Thread 11] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa
+Feb-21 11:51:50.729 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"0beef91f3ee4","status":"DONE","buildId":"bd-662899d0b7bd9e15_9","scanId":"sc-d35efe5dd82943c2_16","succeeded":true,"creationTime":"2025-01-02T20:21:18.308716402Z","duration":150.819589840}
+Feb-21 11:51:50.758 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-21 11:51:50.758 [Task submitter] INFO  nextflow.Session - [a3/8dce63] Submitted process > RNASEQ:FASTQC (FASTQC on ggal_gut)
+Feb-21 11:51:51.163 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"eb14c9316b3a","status":"DONE","buildId":"bd-1fc239026070d9d3_5","scanId":"sc-417f3caba7a3f746_8","succeeded":true,"creationTime":"2025-01-23T17:11:56.568644613Z","duration":84.195320259}
+Feb-21 11:51:51.167 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-21 11:51:51.167 [Task submitter] INFO  nextflow.Session - [81/4fcfd5] Submitted process > RNASEQ:INDEX (ggal_1_48850000_49020000)
+Feb-21 11:52:10.683 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: RNASEQ:INDEX (ggal_1_48850000_49020000); status: COMPLETED; exit: 0; error: -; workDir: /Users/edmundmiller/src/seqera/wave-showcase/example4/work/81/4fcfd5203d78a847a5cbe2f63d590e]
+Feb-21 11:52:10.684 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=33; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-21 11:52:11.390 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"eb14c9316b3a","status":"DONE","buildId":"bd-1fc239026070d9d3_5","scanId":"sc-417f3caba7a3f746_8","succeeded":true,"creationTime":"2025-01-23T17:11:56.568644613Z","duration":84.195320259}
+Feb-21 11:52:11.405 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-21 11:52:11.405 [Task submitter] INFO  nextflow.Session - [bc/b7267f] Submitted process > RNASEQ:QUANT (ggal_gut)
+Feb-21 11:52:13.860 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: RNASEQ:QUANT (ggal_gut); status: COMPLETED; exit: 0; error: -; workDir: /Users/edmundmiller/src/seqera/wave-showcase/example4/work/bc/b7267fde9d9341c80317917f8b0d6b]
+Feb-21 11:52:59.657 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: RNASEQ:FASTQC (FASTQC on ggal_gut); status: COMPLETED; exit: 0; error: -; workDir: /Users/edmundmiller/src/seqera/wave-showcase/example4/work/a3/8dce631c905f426e81602d71a19497]
+Feb-21 11:52:59.679 [TaskFinalizer-3] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=33; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-21 11:52:59.691 [Actor Thread 5] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:eyJ0aWQiOiAxMDY3MH0uOGE0MDAwMDc1ZjdiNGE1MzlkMmRjMWNkYWU5NjAwNmJlZWZkN2Y2Mw==, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, spackFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-02-21T11:52:59.691016-06:00, fingerprint:45c86ad945422c9b99f34830d64694f6, freeze:false, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::multiqc=1.25], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), spackOpts=null, channels=conda-forge,bioconda}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Feb-21 11:53:00.853 [Actor Thread 5] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"c36027ac7372","containerToken":"c36027ac7372","targetImage":"wave.seqera.io/wt/c36027ac7372/wave/build:multiqc-1.25--008d883aee47757c","expiration":"2025-02-23T05:53:00.816362564Z","containerImage":"195996028523.dkr.ecr.eu-west-1.amazonaws.com/wave/build:multiqc-1.25--008d883aee47757c","buildId":"bd-008d883aee47757c_3","cached":true,"freeze":false,"mirror":false,"scanId":"sc-4c759fb16852d047_3"}
+Feb-21 11:53:00.861 [Actor Thread 5] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/multiqc/logo.png
+Feb-21 11:53:00.863 [Actor Thread 5] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/edmundmiller/.nextflow/assets/nextflow-io/rnaseq-nf/multiqc/multiqc_config.yaml
+Feb-21 11:53:01.276 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"c36027ac7372","status":"DONE","buildId":"bd-008d883aee47757c_3","scanId":"sc-4c759fb16852d047_3","succeeded":true,"creationTime":"2025-02-19T17:36:22.272875239Z","duration":190.129103326}
+Feb-21 11:53:01.291 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-21 11:53:01.293 [Task submitter] INFO  nextflow.Session - [9e/b66a95] Submitted process > MULTIQC
+Feb-21 11:54:52.840 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: /Users/edmundmiller/src/seqera/wave-showcase/example4/work/9e/b66a950d99ac29590a5f23df1584c9]
+Feb-21 11:54:52.856 [main] DEBUG nextflow.Session - Session await > all processes finished
+Feb-21 11:54:52.945 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Feb-21 11:54:52.945 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Feb-21 11:54:52.968 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Feb-21 11:54:52.970 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Feb-21 11:54:52.984 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=4; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=3m 22s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Feb-21 11:54:53.267 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Feb-21 11:54:53.297 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-wave@1.7.4'
+Feb-21 11:54:53.297 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-wave
+Feb-21 11:54:53.297 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-tower@1.9.3'
+Feb-21 11:54:53.297 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-tower
+Feb-21 11:54:53.297 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-notify@0.1.0'
+Feb-21 11:54:53.297 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-notify
+Feb-21 11:54:53.298 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Feb-21 11:54:53.299 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
