@@ -1,2 +1,0 @@
-2025-02-21 11:51:48	3m 5s	jovial_kare	OK	1815dc2a18bb2c2a8e4c7915260d77bb04ec8c91	4cd86139-b719-4928-bda6-80e8d06c2b4e	nextflow run rnaseq-nf -with-wave
-2025-02-21 13:45:49	4.1s	elegant_meitner	ERR	1815dc2a18bb2c2a8e4c7915260d77bb04ec8c91	bc5ed8c5-7c31-4074-9360-a71065b96357	nextflow run rnaseq-nf -with-wave
