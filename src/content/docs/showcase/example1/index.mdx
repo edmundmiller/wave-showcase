@@ -26,10 +26,10 @@ import demoCode from './demo.nf?raw';
 import demoDigestCode from './demo-digest.nf?raw';
 
 <Tabs>
-  <TabItem value="demo" label="demo.nf">
+  <TabItem value="demo" label="Pipeline with Container Image">
     <Code code={demoCode} lang="nextflow" title="demo.nf" />
   </TabItem>
-  <TabItem value="demo-digest" label="demo-digest.nf">
+  <TabItem value="demo-digest" label="Alternate Pipeline with Digest">
     <Code code={demoDigestCode} lang="nextflow" title="demo-digest.nf" />
   </TabItem>
 </Tabs>
@@ -47,7 +47,3 @@ In the above script, replace the container image with your own private repositor
 import runCode from './run.sh?raw';
 
 <Code code={runCode} lang="bash" title="run.sh" />
-
-You can also run it directly:
-
-<Code code={runCode} lang="bash" title="run.sh" /> 
