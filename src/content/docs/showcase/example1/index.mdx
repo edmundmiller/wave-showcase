@@ -10,6 +10,7 @@ in your Nextflow pipeline using the Wave service.
 ## File Structure
 
 import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 <FileTree >
 - demo.nf
@@ -22,14 +23,16 @@ import { FileTree } from '@astrojs/starlight/components';
 
 import { Code } from '@astrojs/starlight/components';
 import demoCode from './demo.nf?raw';
-
-<Code code={demoCode} lang="nextflow" title="demo.nf" />
-
-### Alternate Pipeline with Digest
-
 import demoDigestCode from './demo-digest.nf?raw';
 
-<Code code={demoDigestCode} lang="nextflow" title="demo-digest.nf" />
+<Tabs>
+  <TabItem value="demo" label="demo.nf">
+    <Code code={demoCode} lang="nextflow" title="demo.nf" />
+  </TabItem>
+  <TabItem value="demo-digest" label="demo-digest.nf">
+    <Code code={demoDigestCode} lang="nextflow" title="demo-digest.nf" />
+  </TabItem>
+</Tabs>
 
 ## Nextflow Config
 
