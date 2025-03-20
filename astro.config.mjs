@@ -6,6 +6,8 @@ import markdoc from "@astrojs/markdoc";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://edmundmiller.github.io',
+  base: '/wave-showcase',
   integrations: [
     starlight({
       title: "My Docs",
