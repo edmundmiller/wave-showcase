@@ -11,8 +11,6 @@ is uploaded to the Wave service, a container is built on-the-fly, and pushed to
 a temporary repository. The container name is automatically included in the 
 process execution and used to run the task.
 
-## File Structure
-
 import { FileTree } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
@@ -38,7 +36,6 @@ import demoCode from './demo.nf?raw';
 import fooMainCode from './modules/foo/main.nf?raw';
 import dockerfileCode from './modules/foo/Dockerfile?raw';
 
-{/* TODO Maybe remove the tabs here */}
 <Tabs>
   <TabItem value="main" label="Module Script">
     <Code code={fooMainCode} lang="nextflow" title="modules/foo/main.nf" />
