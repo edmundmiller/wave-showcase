@@ -15,12 +15,14 @@ export default defineConfig({
       sidebar: [
         {
           label: "Showcase",
-          autogenerate: { directory: "showcase" },
+          items: [
+            { slug: "showcase/example1" },
+          ],
         },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
-        },
+        // {
+        //   label: "Reference",
+        //   autogenerate: { directory: "reference" },
+        // },
       ],
     }),
   ],
