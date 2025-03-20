@@ -21,6 +21,18 @@ export default defineConfig({
             { slug: "showcase/example3" },
             { slug: "showcase/example4" },
             { slug: "showcase/example5" },
+            { slug: "showcase/example6" },
+            { slug: "showcase/example7" },
+            { slug: "showcase/example8" },
+            {
+              label: "Bonus",
+              items: [
+                { slug: "showcase/example-bonus" },
+                { slug: "showcase/example-googlebatch" },
+                { slug: "showcase/example-gke" },
+                { slug: "showcase/example-spack" },
+              ],
+            },
           ],
         },
         // {

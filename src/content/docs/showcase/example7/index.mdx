@@ -1,0 +1,38 @@
+---
+title: Run nf-core/rnaseq using Conda-based containers and Fusion file system
+---
+
+## Summary 
+
+This example shows how to run the [nf-core/rnaseq](https://nf-co.re/rnaseq) pipeline with AWS Batch using 
+[Fusion](https://www.nextflow.io/docs/latest/fusion.html) to access the AWS S3 storage and the Wave service 
+to provision the pipeline containers on-demand, by using the Conda recipes defined in the pipeline configuration. 
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- nextflow.config
+- run.sh
+</FileTree>
+
+## Nextflow Config
+
+import { Code } from '@astrojs/starlight/components';
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" />
+
+:::note
+Make sure to specify an AWS S3 bucket to which you have read-write access as work directory. 
+
+AWS credentials to access the bucket should be available either via Environment variables, Amazon ECS container credentials or Instance profile credentials.
+::: 

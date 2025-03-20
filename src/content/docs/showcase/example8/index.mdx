@@ -2,58 +2,31 @@
 title: Run a pipeline on a remote Kubernetes cluster (EKS) using Wave and Fusion
 ---
 
-### Summary
+## Summary
 
 This example shows how to deploy a pipeline for execution on a remote 
 AWS EKS cluster using the [Fusion file system](https://www.nextflow.io/docs/latest/fusion.html) as pipeline work directory.
 
-### Kubernetes config 
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- nextflow.config
+- k8s.yml
+- run.sh
+</FileTree>
+
+## Kubernetes Configuration
+
+import { Code } from '@astrojs/starlight/components';
+import k8sYmlCode from './k8s.yml?raw';
+
+<Code code={k8sYmlCode} lang="yaml" title="k8s.yml" />
 
 You will need to create a namespace and a service account in your 
 Kubernetes cluster to run the job submitted by the pipeline execution.
-
-The following manifest shows the bare minimum configuration.
-
-
-```yaml
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: wave-demo
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  namespace: wave-demo
-  name: wave-sa
-  annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::011206878118:role/wave-demo-role" 
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: wave-demo
-  name: wave-role
-rules:
-  - apiGroups: [""]
-    resources: ["pods", "pods/status", "pods/log", "pods/exec"]
-    verbs: ["get", "list", "watch", "create", "delete"]
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  namespace: wave-demo
-  name: wave-rolebind
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: wave-role
-subjects:
-  - kind: ServiceAccount
-    name: wave-sa
-...
-```
 
 The AWS IAM role should provide read-write permission to the S3 bucket used as the pipeline work directory. For example:
 
@@ -109,40 +82,25 @@ Also, make sure that the role defines a trust relationship similar to this:
 }
 ```
 
+## Nextflow Config
 
-### Config 
+import nextflowConfigCode from './nextflow.config?raw';
 
-The Nextflow pipeline uses this configuration: 
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
 
-```
-wave {
-  enabled = true
-}
+:::note
+In the configuration replace the context, namespace and serviceAccount  
+with the names matching your cluster configuration.
+:::
 
-fusion {
-  enabled = true
-}
+## Run It
 
-process {
-   executor = 'k8s'
-}
+import runCode from './run.sh?raw';
 
-k8s {
-    context = '<YOUR K8S CLUSTER CONTEXT>'
-    namespace = 'wave-demo'
-    serviceAccount = 'wave-sa'
-}
-```
+<Code code={runCode} lang="bash" title="run.sh" />
 
-Note: in the configuration replace the context, namespace and serviceAccount  
-with the names matching your cluster configuration. 
-
-### Run it 
-
-```
-nextflow run rnaseq-nf -work-dir 's3://<YOUR BUCKET>/work'
-```
-
+:::note
 Make sure to specify an AWS S3 bucket to which you have read-write access as work directory. 
 
 AWS credentials to access the bucket should be available either via Environment variables, Amazon ECS container credentials or Instance profile credentials.
+::: 

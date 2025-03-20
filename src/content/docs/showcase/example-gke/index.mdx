@@ -2,13 +2,26 @@
 title: Run a pipeline with Wave and Fusion with Google Kubernetes Engine
 ---
 
-### Summary 
+## Summary 
 
 This example shows how to use Wave to provision the [Fusion file system](https://www.nextflow.io/docs/latest/fusion.html) and run it in a Google Kubernetes Engine (GKE) cluster using a Google Storage bucket as pipeline work directory.
 
-NOTE: it requires Nextflow `23.02.1-edge` or later.
+:::note
+This requires Nextflow `23.02.1-edge` or later.
+:::
 
-### Cluster preparation
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- nextflow.config
+- gke.yml
+- run.sh
+</FileTree>
+
+## Cluster Preparation
 
 1. Create a GKE "standard" cluster ("Autopilot" is not supported yet). See [Google documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster) for details. 
 2. Make sure to use instance types with 2 or more CPUs and providing SSD instance storage (families: `n1`,`n2`,`c2`, `m1`, `m2`, `m3`)
@@ -25,42 +38,27 @@ NOTE: it requires Nextflow `23.02.1-edge` or later.
       - GSA_PROJECT: the Google project id e.g.  `my-nf-project-261815`
       - PROJECT_ID: the Google project id e.g. `my-nf-project-261815`
       - ROLE_NAME: the role to grant access permission to the Google Storage bucket e.g. `roles/storage.admin`
- 4. Create the K8s *role* and *rolebinding* required to run Nextflow applying the manifest include in this directory: 
-      ```
-      kubectl apply -f gke.yml
-      ``` 
+4. Create the K8s *role* and *rolebinding* required to run Nextflow applying the manifest include in this directory:
 
-### Config file 
+## Kubernetes Configuration
 
-Nextflow configuration template for the deploying a Nextflow pipeline in a GKE cluster using Wave and Fusion.
+import { Code } from '@astrojs/starlight/components';
+import gkeYmlCode from './gke.yml?raw';
 
-```
-wave {
-  enabled = true
-}
+<Code code={gkeYmlCode} lang="yaml" title="gke.yml" />
 
-fusion {
-  enabled = true
-}
+## Nextflow Config
 
-process {
-   executor = 'k8s'
-   scratch = false
-}
+import nextflowConfigCode from './nextflow.config?raw';
 
-k8s {
-    context = '<YOUR-GKE-CLUSTER-CONTEXT>'
-    namespace = 'wave-demo'
-    serviceAccount = 'wave-sa'
-    pod.nodeSelector = 'iam.gke.io/gke-metadata-server-enabled=true'
-}
-```
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
 
-### Run it 
+## Run It
 
-```
-nextflow run rnaseq-nf \
-  -work-dir gs://<YOUR-BUCKET>/work
-```
+import runCode from './run.sh?raw';
 
+<Code code={runCode} lang="bash" title="run.sh" />
+
+:::note
 Make sure to specify a Google Storage bucket to which you have read-write access as work directory. 
+::: 

@@ -1,0 +1,41 @@
+---
+title: Build a container based on Spack packages
+---
+
+## Summary 
+
+This example shows how to use the [Spack packages](https://spack.io/) defined in 
+Nextflow pipeline via the `spack` directive to assemble the corresponding containers 
+on-demand and provision for the pipeline execution. 
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- demo.nf
+- nextflow.config
+- run.sh
+</FileTree>
+
+## Pipeline Script
+
+import { Code } from '@astrojs/starlight/components';
+import demoCode from './demo.nf?raw';
+
+<Code code={demoCode} lang="nextflow" title="demo.nf" />
+
+## Nextflow Config
+
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+The above setting instructs Wave to only use the `spack` directive to provision the pipeline containers, ignoring the use of the container directive and any Dockerfile(s).
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" /> 

@@ -1,0 +1,49 @@
+---
+title: Interactive debugging of remotely executed tasks
+---
+
+## Summary 
+
+This example shows how Wave and [Fusion file system](https://www.nextflow.io/docs/latest/fusion.html) can be used to debug 
+interactively pipeline tasks regardless of whether they were executed on the local computer or remotely.
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- nextflow.config
+- run.sh
+</FileTree>
+
+## Nextflow Config
+
+import { Code } from '@astrojs/starlight/components';
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+:::note
+Make sure you replace the value in `workDir` with an AWS S3 bucket that you have access to. The `docker` section is not needed when running with AWS Batch.
+:::
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" />
+
+For purposes of this example, the [rnaseq-nf](https://github.com/nextflow-io/rnaseq-nf) pipeline can be used. Run it locally or using the AWS Batch executor by adding the `-p batch` profile option.
+
+Once execution completes, either successfully or with a failure, any task's execution can be debugged in an interactive shell session using this command:
+
+```bash
+nextflow plugin nf-wave:debug-task <task hash or name or workdir>
+```
+
+For the task hash in the command above, use the unique task hash id generated during your pipeline's execution. e.g. `d8/d067e8`. 
+
+:::tip
+Currently, task debugging is only possible up until the expiry of the temporary token associated with the container's execution — that is, 12 hours from the task's creation.
+::: 
