@@ -1,0 +1,72 @@
+---
+title: Build and deliver Nextflow module containers to a private repository 
+---
+
+## Summary 
+
+This example shows how to associate a Dockerfile to a Nextflow module
+and push it to a preferred private repository.
+
+When executing a pipeline script with the Wave plugin enabled, the Dockerfile 
+is uploaded to the Wave service, a container is built on-the-fly, and pushed to
+the repository you have specified.
+
+The repository access key needs to be provided using the [Tower credentials](https://help.tower.nf/22.2/credentials/overview/) 
+associated with your own account. 
+
+To access your Tower account, specify your Tower access token in the Nextflow config
+file (see below).
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- demo.nf
+- nextflow.config
+- run.sh
+- modules/
+  - foo/
+    - main.nf
+    - Dockerfile
+</FileTree>
+
+## Pipeline Script
+
+import { Code } from '@astrojs/starlight/components';
+import demoCode from './demo.nf?raw';
+
+<Code code={demoCode} lang="nextflow" title="demo.nf" />
+
+## Module Script
+
+import fooMainCode from './modules/foo/main.nf?raw';
+import dockerfileCode from './modules/foo/Dockerfile?raw';
+
+:::note
+The process does not need to declare any `container` to be used. Instead,
+it references the `Dockerfile` included in the module directory.
+:::
+
+<Code code={fooMainCode} lang="nextflow" title="modules/foo/main.nf" />
+<Code code={dockerfileCode} lang="dockerfile" title="modules/foo/Dockerfile" />
+
+## Nextflow Config
+
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+The `docker` scope is only needed to run the example in your local computer using Docker. 
+
+:::note
+The use of the `build.repository` setting to push the container image built by 
+Wave to your own repository. Replace the repository name with one of your choice. 
+:::
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" /> 

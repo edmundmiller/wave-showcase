@@ -1,0 +1,35 @@
+---
+title: Build a container based on Conda packages  
+---
+
+## Summary 
+
+This example shows how to use the Conda packages defined in 
+Nextflow pipeline via the `conda` directive to assemble 
+the corresponding containers on-demand and provision for the 
+pipeline execution. 
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- nextflow.config
+- run.sh
+</FileTree>
+
+## Nextflow Config
+
+import { Code } from '@astrojs/starlight/components';
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+The above setting instructs Wave to only use the `conda` directive to provision the pipeline containers, ignoring the use of the container directive and any Dockerfile(s).
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" /> 

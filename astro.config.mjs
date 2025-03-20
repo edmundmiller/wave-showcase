@@ -17,6 +17,10 @@ export default defineConfig({
           label: "Showcase",
           items: [
             { slug: "showcase/example1" },
+            { slug: "showcase/example2" },
+            { slug: "showcase/example3" },
+            { slug: "showcase/example4" },
+            { slug: "showcase/example5" },
           ],
         },
         // {

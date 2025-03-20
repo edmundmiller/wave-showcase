@@ -1,0 +1,65 @@
+---
+title: Build and deliver Nextflow module containers
+---
+
+## Summary 
+
+This example shows how to associate a Dockerfile with a Nextflow module.
+
+When executing a pipeline script enabling the Wave plugin, the Dockerfile 
+is uploaded to the Wave service, a container is built on-the-fly, and pushed to
+a temporary repository. The container name is automatically included in the 
+process execution and used to run the task.
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- demo.nf
+- nextflow.config
+- run.sh
+- modules/
+  - foo/
+    - main.nf
+    - Dockerfile
+</FileTree>
+
+## Pipeline Script
+
+import { Code } from '@astrojs/starlight/components';
+import demoCode from './demo.nf?raw';
+
+<Code code={demoCode} lang="nextflow" title="demo.nf" />
+
+## Module Script
+
+import fooMainCode from './modules/foo/main.nf?raw';
+import dockerfileCode from './modules/foo/Dockerfile?raw';
+
+{/* TODO Maybe remove the tabs here */}
+<Tabs>
+  <TabItem value="main" label="Module Script">
+    <Code code={fooMainCode} lang="nextflow" title="modules/foo/main.nf" />
+  </TabItem>
+  <TabItem value="dockerfile" label="Dockerfile">
+    <Code code={dockerfileCode} lang="dockerfile" title="modules/foo/Dockerfile" />
+  </TabItem>
+</Tabs>
+
+:::note
+The process does not need to declare any `container` to used. Instead, a `Dockerfile` is included in the module directory.
+:::
+
+## Nextflow Config
+
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" /> 

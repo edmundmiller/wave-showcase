@@ -1,0 +1,62 @@
+---
+title: Augment existing containers with Nextflow process resources 
+---
+
+## Summary
+
+This example shows how to augment containers used by your pipeline by making 
+content contained in a module `resources` directory available inside your container.
+
+This allows developers to make the contents of arbitrary files available to modules executing in containers at runtime. It is worth noting that in this case, the container is *not* re-built.
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<FileTree >
+- demo.nf
+- nextflow.config
+- run.sh
+- modules/
+  - foo/
+    - main.nf
+    - resources/
+      - usr/
+        - local/
+          - bin/
+            - say-hello.sh
+</FileTree>
+
+## Pipeline Script
+
+import { Code } from '@astrojs/starlight/components';
+import demoCode from './demo.nf?raw';
+
+<Code code={demoCode} lang="nextflow" title="demo.nf" />
+
+## Module Script and Resources
+
+import fooMainCode from './modules/foo/main.nf?raw';
+import sayHelloCode from './modules/foo/resources/usr/local/bin/say-hello.sh?raw';
+
+<Tabs>
+  <TabItem value="main" label="Module Script">
+    <Code code={fooMainCode} lang="nextflow" title="modules/foo/main.nf" />
+  </TabItem>
+  <TabItem value="sayHello" label="say-hello.sh">
+    <Code code={sayHelloCode} lang="bash" title="modules/foo/resources/usr/local/bin/say-hello.sh" />
+  </TabItem>
+</Tabs>
+
+## Nextflow Config
+
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" /> 
