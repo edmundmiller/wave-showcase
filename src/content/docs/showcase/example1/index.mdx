@@ -1,0 +1,50 @@
+---
+title: Authenticate Private Container Repositories
+---
+
+## Summary 
+
+This example shows how to access a private container repository 
+in your Nextflow pipeline using the Wave service. 
+
+## File Structure
+
+import { FileTree } from '@astrojs/starlight/components';
+
+<FileTree >
+- demo.nf
+- demo-digest.nf
+- nextflow.config
+- run.sh
+</FileTree>
+
+## Pipeline Script
+
+import { Code } from '@astrojs/starlight/components';
+import demoCode from './demo.nf?raw';
+
+<Code code={demoCode} lang="nextflow" title="demo.nf" />
+
+### Alternate Pipeline with Digest
+
+import demoDigestCode from './demo-digest.nf?raw';
+
+<Code code={demoDigestCode} lang="nextflow" title="demo-digest.nf" />
+
+## Nextflow Config
+
+import nextflowConfigCode from './nextflow.config?raw';
+
+<Code code={nextflowConfigCode} lang="nextflow" title="nextflow.config" />
+
+In the above script, replace the container image with your own private repository.
+
+## Run It
+
+import runCode from './run.sh?raw';
+
+<Code code={runCode} lang="bash" title="run.sh" />
+
+You can also run it directly:
+
+<Code code={runCode} lang="bash" title="run.sh" /> 
